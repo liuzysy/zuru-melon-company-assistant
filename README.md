@@ -1,4 +1,4 @@
-# ZURU Melon Company Assistant Agent - Complete Submission Package
+# ZURU Company Assistant Agent - Complete Submission Package
 
 ## Table of Contents
 1. [Project Overview](#project-overview)
@@ -13,7 +13,7 @@
 ---
 
 ## Project Overview
-This repository contains the implementation of an intelligent, agentic AI system designed to act as a ZURU Melon Company Assistant. It functions as a "Company ChatGPT" capable of answering both internal company-related queries and general knowledge questions through an autonomous decision-making process.
+This repository contains the implementation of an intelligent, agentic AI system designed to act as a ZURU Company Assistant. It functions as a "Company ChatGPT" capable of answering both internal company-related queries and general knowledge questions through an autonomous decision-making process.
 
 ---
 
@@ -78,7 +78,6 @@ The system follows a standard Agentic AI architecture with clear separation of c
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-
 ### Key Components
 - **`src/config.py`**: Centralized configuration management, loads all settings from environment variables (no hardcoded secrets)
 - **`src/safety/guardrail.py`**: Implements safety and compliance checks
@@ -113,10 +112,7 @@ The system follows a standard Agentic AI architecture with clear separation of c
 ### Step 1: Clone or Initialize the Repository
 ```bash
 # If you're cloning from GitHub
-git clone <your-repository-url>
-cd zuru-melon-company-assistant
-
-# Or if you're initializing locally
+git clone https://github.com/liuzysy/zuru-melon-company-assistant.git
 cd zuru-melon-company-assistant
 ```
 
@@ -124,7 +120,9 @@ cd zuru-melon-company-assistant
 ```bash
 运行
 # Create virtual environment
-python -m venv .venv
+PYTHONNOUSERSITE=1
+pip install uv
+uv python install 3.11.2
 
 # Activate virtual environment (Linux/macOS)
 source .venv/bin/activate
@@ -136,10 +134,9 @@ source .venv/bin/activate
 ### Step 3: Install Dependencies
 ```bash
 # Upgrade pip to latest version
-pip install --upgrade pip
 
 # Install all required packages
-pip install -r requirements.txt
+uv pip install -r requirements.txt
 ```
 
 ### Step 4: Configure Environment Variables
@@ -166,15 +163,8 @@ CHUNK_SIZE=500
 CHUNK_OVERLAP=50
 MAX_DIALOGUE_HISTORY=5
 ```
-3. Critical Security Note: The .env file is excluded from version control via .gitignore to protect sensitive API keys. Never commit this file to GitHub.
 
-### Step 5: Prepare the Knowledge Base
-Add ZURU Melon's internal documents (Markdown .md or plain text .txt files) to the data/ directory. Examples include:
-coding_guidelines.md: ZURU Melon's Python/backend coding standards
-company_policies.md: HR and operational policies
-technical_procedures.md: Engineering workflow documentation
-
-Running the Assistant
+### Step 5: Running the Assistant
 Start the Interactive CLI
 ```bash
 # Ensure virtual environment is activated
@@ -212,11 +202,11 @@ You:
 ### Scenario 1: Internal Company Knowledge Query
 
 **Test Input:**  
-`What are ZURU Melon's Python import rules?`
+`What are ZURU's Python import rules?`
 
 **Expected Behavior:**
 - Agent identifies the query as **company-internal**
-- Retrieves relevant content from `data/coding_guidelines.md`
+- Retrieves relevant content from `data/Coding Style.md`
 - Returns a **concise answer based on the local document**
 - **No internet search** is performed
 
@@ -244,7 +234,7 @@ You:
 - Agent detects **insufficient context** in the query
 - Asks a **clarifying question**, e.g.:
 
-> "Could you specify what type of time off you're requesting? ZURU Melon has different policies for vacation, sick leave, and personal days."
+> "Could you specify what type of time off you're requesting? ZURU has different policies for vacation, sick leave, and personal days."
 
 - Waits for the **user's follow-up** before proceeding
 
@@ -258,7 +248,7 @@ You:
 **Expected Behavior:**
 - Agent uses **intrinsic LLM knowledge** (no external tools)
 - Provides a **structured and relevant answer** about code review best practices
-- May include **ZURU Melon-specific context** if available in the knowledge base
+- May include **ZURU specific context** if available in the knowledge base
 
 ---
 
@@ -271,9 +261,11 @@ You:
 - **Safety guardrail immediately blocks the query**
 - Returns a **compliance response**, e.g.:
 
-> "I'm unable to assist with this request. ZURU Melon has strict policies against unethical and illegal activities, including phishing or unauthorized access to company systems."
+> "I'm unable to assist with this request. ZURU has strict policies against unethical and illegal activities, including phishing or unauthorized access to company systems."
 
 - **No LLM or external tool calls** are made beyond the safety check
+
+---
 
 ### Project Structure
 ```
@@ -352,5 +344,5 @@ This implementation fully addresses all assignment evaluation criteria:
 ---
 
 ### License
-This project is developed **exclusively for the ZURU Melon technical assignment evaluation**.  
+This project is developed **exclusively for the ZURU's technical assignment evaluation**.  
 All rights reserved.
