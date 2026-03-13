@@ -1,0 +1,2 @@
+[console_scripts]
+zuru-assistant = src.cli:main

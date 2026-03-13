@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: zuru-melon-company-assistant
+Version: 0.1.0
+Summary: Agentic AI company assistant for ZURU Melon
+Author-email: Your Name <your.email@example.com>
+Requires-Python: >=3.10
+Requires-Dist: openai>=1.0.0
+Requires-Dist: langchain>=0.3.0
+Requires-Dist: langchain-core>=0.3.0
+Requires-Dist: langchain-community>=0.3.0
+Requires-Dist: langchain-openai>=0.2.0
+Requires-Dist: langchain-text-splitters>=0.3.0
+Requires-Dist: faiss-cpu>=1.7.4
+Requires-Dist: python-dotenv>=1.0.0
+Requires-Dist: click>=8.0.0
+Requires-Dist: pydantic>=2.0.0
+Requires-Dist: pydantic-settings>=2.0.0
+Requires-Dist: pytest>=7.0.0

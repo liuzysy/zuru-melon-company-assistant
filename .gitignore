@@ -1,0 +1,24 @@
+# Secrets and environment files (NEVER COMMIT THESE)
+.env
+
+# Virtual environment directories
+.venv/
+venv/
+ENV/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE configuration files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Locally generated index files
+data/faiss_index/
+
+# Log files
+*.log
