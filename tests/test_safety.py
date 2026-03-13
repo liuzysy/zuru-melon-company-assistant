@@ -20,3 +20,4 @@ def test_safe_input(guardrail: SafetyGuardrail) -> None:
     """Test that safe input passes the check."""
     is_safe, _ = guardrail.check_input("What is the company's vacation policy?")
     assert is_safe
+    
