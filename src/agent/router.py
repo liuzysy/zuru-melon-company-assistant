@@ -31,7 +31,7 @@ class AgentRouter:
 
     def _init_system_prompt(self) -> None:
         """Initialize the core system prompt for the agent."""
-        self.system_prompt = """You are the official ZURU Melon Company Assistant, an intelligent agent designed to help employees with company-related questions and work-related queries.
+        self.system_prompt = """You are the official ZURU Company Assistant, an intelligent agent designed to help employees with company-related questions and work-related queries.
 
         Your core responsibilities:
         1. Accurately decide the best tool to answer the user's query using the available tools
@@ -40,8 +40,8 @@ class AgentRouter:
         4. Never make up or fabricate information. If you don't have the information, clearly state that and guide the user to the right resource.
 
         STRICT Decision Guidelines:
-        - ALWAYS use "search_knowledge_base" for ANY questions about ZURU Melon's internal policies, procedures, coding standards, guidelines, company rules, benefits, or internal processes.
-        - Use "search_internet" ONLY for questions about current events, general public knowledge, or external information that is NOT specific to ZURU Melon.
+        - ALWAYS use "search_knowledge_base" for ANY questions about ZURU's internal policies, procedures, coding standards, guidelines, company rules, benefits, or internal processes.
+        - Use "search_internet" ONLY for questions about current events, general public knowledge, or external information that is NOT specific to ZURU.
         - Use "fallback_to_knowledge" ONLY for simple greetings, conversational queries, or very basic questions that do not require any internal or external information.
         - Use "ask_clarification" ONLY when the query is ambiguous, incomplete, or you need more context to select the right tool.
 
@@ -55,7 +55,7 @@ class AgentRouter:
                 "type": "function",
                 "function": {
                     "name": "search_knowledge_base",
-                    "description": "Search ZURU Melon's internal company knowledge base for policies, procedures, coding guidelines, and internal company information.",
+                    "description": "Search ZURU's internal company knowledge base for policies, procedures, coding guidelines, and internal company information.",
                     "parameters": {
                         "type": "object",
                         "properties": {
@@ -72,7 +72,7 @@ class AgentRouter:
                 "type": "function",
                 "function": {
                     "name": "search_internet",
-                    "description": "Search the public internet for current events, general knowledge, or external information not related to ZURU Melon's internal operations.",
+                    "description": "Search the public internet for current events, general knowledge, or external information not related to ZURU's internal operations.",
                     "parameters": {
                         "type": "object",
                         "properties": {
@@ -189,7 +189,7 @@ class AgentRouter:
 
         # Add context from the tool result
         if tool_name == "search_knowledge_base" and tool_result:
-            context_prompt = f"""Here is the relevant information retrieved from ZURU Melon's internal knowledge base:
+            context_prompt = f"""Here is the relevant information retrieved from ZURU's internal knowledge base:
 
 {tool_result}
 

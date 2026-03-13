@@ -1,4 +1,4 @@
-# ZURU Company Assistant Agent - Complete Submission Package
+# ZURU Company Assistant Agent
 
 ## Table of Contents
 1. [Project Overview](#project-overview)
@@ -112,8 +112,8 @@ The system follows a standard Agentic AI architecture with clear separation of c
 ### Step 1: Clone or Initialize the Repository
 ```bash
 # If you're cloning from GitHub
-git clone https://github.com/liuzysy/zuru-melon-company-assistant.git
-cd zuru-melon-company-assistant
+git clone https://github.com/liuzysy/zuru-company-assistant.git
+cd zuru-company-assistant
 ```
 
 ### Step 2: Create and Activate Virtual Environment
@@ -122,6 +122,7 @@ cd zuru-melon-company-assistant
 # Create virtual environment
 PYTHONNOUSERSITE=1
 pip install uv
+python3 --version
 uv python install 3.11.2
 
 # Activate virtual environment (Linux/macOS)
@@ -179,7 +180,7 @@ PYTHONPATH=src python -m src.cli
 Expected Launch Output
 ```bash
 ============================================================
-       ZURU MELON COMPANY ASSISTANT AGENT
+       ZURU COMPANY ASSISTANT AGENT
 ============================================================
 Type 'quit' or 'exit' to end the session.
 Type 'clear' to clear the dialogue history.
@@ -269,7 +270,7 @@ You:
 
 ### Project Structure
 ```
-zuru-melon-company-assistant/
+zuru-company-assistant/
 ├── .gitignore                # Git ignore rules (protects secrets)
 ├── README.md                 # Project documentation (this file)
 ├── requirements.txt          # Python dependency list

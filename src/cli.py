@@ -1,4 +1,4 @@
-"""Interactive CLI interface for the ZURU Melon Company Assistant."""
+"""Interactive CLI interface for the ZURU Company Assistant."""
 
 import sys
 import logging
@@ -20,11 +20,11 @@ logger = logging.getLogger(__name__)
 
 
 class AssistantCLI:
-    """Interactive CLI for the ZURU Melon Company Assistant."""
+    """Interactive CLI for the ZURU Company Assistant."""
 
     def __init__(self) -> None:
         """Initialize all core components of the assistant."""
-        logger.info("Initializing ZURU Melon Company Assistant...")
+        logger.info("Initializing ZURU Company Assistant...")
         self.guardrail = SafetyGuardrail()
         self.router = AgentRouter()
         self.executor = ToolExecutor()
@@ -55,7 +55,7 @@ class AssistantCLI:
     def _print_welcome(self) -> None:
         """Print the welcome banner and usage instructions."""
         print("=" * 60)
-        print("       ZURU MELON COMPANY ASSISTANT AGENT")
+        print("       ZURU COMPANY ASSISTANT AGENT")
         print("=" * 60)
         print("Type 'quit' or 'exit' to end the session.")
         print("Type 'clear' to clear the dialogue history.")
@@ -84,7 +84,7 @@ class AssistantCLI:
 
                 # Handle exit commands
                 if user_input.lower() in ["quit", "exit", "q"]:
-                    print("Thank you for using the ZURU Melon Company Assistant. Goodbye!")
+                    print("Thank you for using the ZURU Company Assistant. Goodbye!")
                     break
 
                 # Handle clear command

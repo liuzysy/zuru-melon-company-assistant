@@ -1,4 +1,4 @@
-"""Global configuration management for the ZURU Melon Company Assistant."""
+"""Global configuration management for the ZURU Company Assistant."""
 
 from typing import List, Optional
 from dotenv import load_dotenv
